@@ -19,5 +19,4 @@ class Scraper
             Devices.new(hash)
         end
     end
-
 end
