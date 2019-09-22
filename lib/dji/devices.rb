@@ -7,7 +7,6 @@ class Devices
     def initialize(attributes)
         @device_name = attributes[:name]
         @device_price = attributes[:price]
-        # binding.pry
         @@all << self
     end
 

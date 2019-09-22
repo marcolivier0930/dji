@@ -23,7 +23,6 @@ class CLI
         Devices.all.each.with_index do |device, i|
             # binding.pry
             puts "#{i + 1}. #{device.device_name}"
-            # puts "    Price: #{device.device_price}"
         end
 
         device_selection
@@ -50,11 +49,11 @@ class CLI
                 puts "Hope you enjoyed! :)".colorize(:blue)
                 break
             else
-                puts "Error! Please again!".colorize(:red)
+                puts "Wrong input! Please again!".colorize(:red)
                 device_selection
             end
         end
-        puts "Come again! ;)".colorize(:magenta)
+        puts "Please, come again! ;)".colorize(:green)
         exit
     end
 
