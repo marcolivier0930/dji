@@ -19,28 +19,31 @@ class CLI
     end
 
     def show_devices
+        puts "  Below is the list of the devices: ".colorize(:cyan)
         Devices.all.each.with_index do |device, i|
             # binding.pry
             puts "#{i + 1}. #{device.device_name}"
-             puts "    Price: #{device.device_price}"
+            # puts "    Price: #{device.device_price}"
         end
 
         device_selection
     end
 
     def device_selection
-        puts "Type the number and press Enter: ".colorize(:green)
+        puts "  Type the number and press Enter: ".colorize(:green)
         input = " "
         while input != "exit"
             input = gets.chomp
 
             if (1..36).include?(input.to_i)
-                @chosen_device = Devices.all[input.to_i]
+                @chosen_device = Devices.all[input.to_i - 1]
+                # binding.pry
+                puts "    Name: #{@chosen_device.device_name}"
                 puts "    Price: #{@chosen_device.device_price}"
                 puts " "
                 puts "Type 'devices' to show all devices: ".colorize(:green)
                 puts " "
-                puts "Type 'exit' to exit".colorize("red")
+                puts "Type 'exit' to exit".colorize(:red)
             elsif input.downcase == 'devices'
                 show_devices
             elsif input.downcase == "exit"
