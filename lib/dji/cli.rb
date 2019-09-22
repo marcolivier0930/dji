@@ -6,14 +6,17 @@ class CLI
     end
 
     def welcome
-        puts "Welcome, you can see the devices name for DJI: ".colorize(:green)
+        puts "Welcome, you can see the devices name for DJI! ".colorize(:green)
         sleep 2
-        print "All you have to do is type 'devices' and press Enter: ".colorize(:green)
+        print "All you have to do is type 'devices' to see the list of the devices we have and press 'Enter': ".colorize(:blue)
         input = gets.chomp
         if input == 'devices'
             show_devices
+        elsif input == 'exit'
+            puts "Come again!".colorize(:magenta)
+            exit
         else
-            puts "Invalid input"
+            puts "Invalid input".colorize(:red)
             welcome
         end
     end
@@ -29,7 +32,8 @@ class CLI
     end
 
     def device_selection
-        puts "  Type the number and press Enter: ".colorize(:green)
+        puts "  Type the number of the device you want to see the price and press 'Enter': ".colorize(:green)
+        print " > "
         input = " "
         while input != "exit"
             input = gets.chomp
@@ -37,12 +41,12 @@ class CLI
             if (1..36).include?(input.to_i)
                 @chosen_device = Devices.all[input.to_i - 1]
                 # binding.pry
-                puts "    Name: #{@chosen_device.device_name}"
-                puts "    Price: #{@chosen_device.device_price}"
+                puts "    Name: ".colorize(:blue) + "#{@chosen_device.device_name}".colorize(:green)
+                puts "    Price: ".colorize(:blue) + "#{@chosen_device.device_price}".colorize(:green)
                 puts " "
                 puts "Type 'devices' to show all devices: ".colorize(:green)
-                puts " "
-                puts "Type 'exit' to exit".colorize(:red)
+                puts "Type 'exit' to exit: ".colorize(:red)
+                print " > "
             elsif input.downcase == 'devices'
                 show_devices
             elsif input.downcase == "exit"
@@ -53,7 +57,7 @@ class CLI
                 device_selection
             end
         end
-        puts "Please, come again! ;)".colorize(:green)
+        puts "Please, come again! :)".colorize(:magenta)
         exit
     end
 

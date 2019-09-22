@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dji`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+My gem is to show some of the devices from the company DJI, famous for making drones and cameras. Based on your input it will show you the name and price of each devices to choose.  
 
 ## Installation
 
@@ -22,7 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Download this repo from Github and save it somewhere easily accessible. Open your Terminal and go to > File > Open Folder and and to the downloaded Github repository and open in your IDE. 
+    1. Open your terminal
+    2. Type 'bundle' and press Enter.
+    3. When it's finished, type 'gem install dji' to get the gem.
+    4. After, run 'bin/setup' to execute the files.
+    5. If line (4) doesn't run, type 'ruby bin/begin'.
 
 ## Development
 
@@ -32,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dji. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/marcolivier0930/dji. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
